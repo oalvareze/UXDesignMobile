@@ -1,3 +1,5 @@
+import 'Alarma.dart';
+import 'CrearRecordatorio.dart';
 import 'hexColor.dart';
 import 'package:flutter/material.dart';
 
@@ -128,7 +130,13 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            FloatingActionButton.extended(onPressed: (){},
+            FloatingActionButton.extended(onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const CrearRecordatorioPage()),
+              );
+
+            },
               label: Text("Alarma", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),),
               icon: Icon(Icons.add),
               foregroundColor: Colors.white,
@@ -138,7 +146,12 @@ class HomePage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 10,),
-            FloatingActionButton.extended(onPressed: (){},
+            FloatingActionButton.extended(onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AlarmaPage()),
+              );
+            },
               label: Text("Recordatorio", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),),
               icon: Icon(Icons.add),
               foregroundColor: Colors.white,
